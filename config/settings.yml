@@ -479,3 +479,6 @@ vbms:
   client_keyfile: vetsapi.client.vbms.aide.oit.va.gov.p12
   server_cert: vbms.aide.oit.va.gov.crt
   environment_directory: /srv/vets-api/secret
+
+vet_verification:
+  signing_key_path: config/certs/mykey.pem
