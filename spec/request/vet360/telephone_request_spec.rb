@@ -9,7 +9,7 @@ RSpec.describe 'telephone', type: :request do
   let(:headers) { { 'Content-Type' => 'application/json', 'Accept' => 'application/json' } }
 
   before do
-    Timecop.freeze(Time.zone.local(2018, 6, 6, 15, 35, 55))
+    # Timecop.freeze(Time.zone.local(2018, 6, 6, 15, 35, 55))
     sign_in_as(user)
   end
 
