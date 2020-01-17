@@ -124,6 +124,7 @@ RSpec.describe 'telephone', type: :request do
         allow(user).to receive(:vet360_id).and_return('1')
         allow_any_instance_of(User).to receive(:icn).and_return('1234')
         telephone.id = id_in_cassette
+        telephone.source_date = Time.now.iso8601
       end
 
       it 'effective_end_date is NOT included in the request body', :aggregate_failures do
