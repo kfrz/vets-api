@@ -121,7 +121,7 @@ RSpec.describe 'telephone', type: :request do
       let(:id_in_cassette) { 17259 }
 
       before do
-        allow(user).to receive(:vet360_id).and_return('1')
+        allow_any_instance_of(User).to receive(:vet360_id).and_return('1')
         allow_any_instance_of(User).to receive(:icn).and_return('1234')
         telephone.id = id_in_cassette
         Timecop.return
