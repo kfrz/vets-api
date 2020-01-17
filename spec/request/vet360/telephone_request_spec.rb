@@ -126,7 +126,7 @@ RSpec.describe 'telephone', type: :request do
       end
 
       it 'effective_end_date is NOT included in the request body', :aggregate_failures do
-        VCR.use_cassette('vet360/contact_information/put_telephone_ignore_eed', VCR::MATCH_EVERYTHING) do
+        VCR.use_cassette('vet360/contact_information/put_telephone_ignore_eed', record: :new_episodes) do
           # The cassette we're using does not include the effectiveEndDate in the body.
           # So this test ensures that it was stripped out
           put('/v0/profile/telephones', params: telephone.to_json, headers: headers)
