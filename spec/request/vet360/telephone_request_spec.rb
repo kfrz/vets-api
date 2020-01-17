@@ -130,6 +130,7 @@ RSpec.describe 'telephone', type: :request do
           # The cassette we're using does not include the effectiveEndDate in the body.
           # So this test ensures that it was stripped out
           put('/v0/profile/telephones', params: telephone.to_json, headers: headers)
+          binding.pry; fail
           expect(response).to have_http_status(:ok)
           expect(response).to match_response_schema('vet360/transaction_response')
         end
