@@ -14,6 +14,10 @@ describe Vet360::Person::Service, skip_vet360: true do
 
     context 'with a user present, that has a icn_with_aaid, and no passed in ICN' do
       it 'returns a status of 200', :aggregate_failures do
+        VCR.configure do |c|
+          c.allow_http_connections_when_no_cassette = true
+        end
+        binding.pry; fail
         VCR.use_cassette('vet360/person/init_vet360_id_success', VCR::MATCH_EVERYTHING) do
           response = subject.init_vet360_id
 
