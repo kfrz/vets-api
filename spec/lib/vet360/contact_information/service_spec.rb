@@ -129,7 +129,8 @@ describe Vet360::ContactInformation::Service, skip_vet360: true do
     let(:address) { build(:vet360_address, vet360_id: user.vet360_id, source_system_user: user.icn) }
 
     context 'with a validation key' do
-      let(:address) { build(:vet360_validation_address) }
+      let(:address1) { build(:vet360_validation_address, :override) }
+      let(:address2) { build(:vet360_address, :override) }
 
       it 'will override the address error', run_at: '2019-10-28 18:59:37 -0700' do
         VCR.configure do |c|
