@@ -132,7 +132,7 @@ describe Vet360::ContactInformation::Service, skip_vet360: true do
       let(:address1) { build(:vet360_validation_address, :override) }
       let(:address2) { build(:vet360_address, :override) }
 
-      it 'will override the address error', run_at: '2019-10-28 18:59:37 -0700' do
+      it 'will override the address error' do
         VCR.configure do |c|
           c.allow_http_connections_when_no_cassette = true
         end
