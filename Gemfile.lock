@@ -248,9 +248,9 @@ GEM
     colored2 (3.1.2)
     colorize (0.8.1)
     concurrent-ruby (1.1.5)
-    config (2.2.1)
+    config (2.1.0)
       deep_merge (~> 1.2, >= 1.2.1)
-      dry-validation (~> 1.0, >= 1.0.0)
+      dry-validation (~> 1.0)
     connection_pool (2.2.2)
     content_disposition (1.0.0)
     cork (0.3.0)
@@ -317,13 +317,13 @@ GEM
       dry-equalizer (~> 0.3)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 1.0, >= 1.0.2)
-    dry-validation (1.4.1)
+    dry-validation (1.4.2)
       concurrent-ruby (~> 1.0)
       dry-container (~> 0.7, >= 0.7.1)
       dry-core (~> 0.4)
       dry-equalizer (~> 0.2)
       dry-initializer (~> 3.0)
-      dry-schema (~> 1.0, >= 1.4.3)
+      dry-schema (~> 1.4, >= 1.4.3)
     ecma-re-validator (0.2.0)
       regexp_parser (~> 1.2)
     encryptor (3.0.0)
@@ -777,7 +777,7 @@ DEPENDENCIES
   carrierwave-aws
   claims_api!
   clam_scan
-  config
+  config (= 2.1.0)
   connect_vbms!
   danger
   database_cleaner
@@ -903,4 +903,4 @@ RUBY VERSION
    ruby 2.4.5p335
 
 BUNDLED WITH
-   1.17.3
+   2.0.2

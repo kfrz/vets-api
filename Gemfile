@@ -37,7 +37,7 @@ gem 'betamocks', git: 'https://github.com/department-of-veterans-affairs/betamoc
 gem 'breakers'
 gem 'carrierwave-aws'
 gem 'clam_scan'
-gem 'config'
+gem 'config', '2.1.0'
 gem 'connect_vbms', git: 'https://github.com/department-of-veterans-affairs/connect_vbms.git', branch: 'master', require: 'vbms'
 gem 'date_validator'
 gem 'dry-struct'
