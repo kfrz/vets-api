@@ -137,6 +137,7 @@ describe Vet360::ContactInformation::Service, skip_vet360: true do
           c.allow_http_connections_when_no_cassette = true
         end
         res = Vet360::AddressValidation::Service.new.candidate(address1)
+        address2.validation_key = res['candidate_addresses'][0]['address_meta_data']['validation_key']
         binding.pry; fail
 
         VCR.use_cassette(
