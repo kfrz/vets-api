@@ -46,8 +46,7 @@ FactoryBot.define do
     trait :override do
       address_pou { Vet360::Models::Address::CORRESPONDENCE }
       id { 108_347 }
-      address_line1 { '1494 Martin Luther King Rd' }
-      address_line2 { 'c/o foo' }
+      address_line1 { 'sdfsdf' }
       city { 'Fulton' }
       state_code { 'MS' }
       zip_code { '38843' }
