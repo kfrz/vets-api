@@ -19,6 +19,9 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 RUN mkdir -p /srv/vets-api/{clamav/database,pki/tls,secure,src} && \
     chown -R vets-api:vets-api /srv/vets-api && \
     ln -s /srv/vets-api/pki /etc/pki
+
+RUN curl -o /srv/vets-api/clamav/database/daily.cvd https://database.clamav.net/daily.cvd
+
 # XXX: get rid of the CA trust manipulation when we have a better model for it
 COPY config/ca-trust/* /usr/local/share/ca-certificates/
 # rename .pem files to .crt because update-ca-certificates ignores files that are not .crt
@@ -53,7 +56,7 @@ RUN curl -sSL -o /usr/local/bin/cc-test-reporter https://codeclimate.com/downloa
 COPY --chown=vets-api:vets-api config/freshclam.conf docker-entrypoint.sh ./
 USER vets-api
 # XXX: this is tacky 
-RUN freshclam --config-file freshclam.conf
+#RUN freshclam --config-file freshclam.conf
 ENTRYPOINT ["/usr/bin/dumb-init", "--", "./docker-entrypoint.sh"]
 
 ###
